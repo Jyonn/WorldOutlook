@@ -130,6 +130,7 @@ class WorldOutlook {
             macos: {
                 element: this.pfmacOS,
                 client: 'https://s.6-79.cn/Ikrz1W',
+                tutorial: 'https://s.6-79.cn/6SLCT7',
             },
         };
 
@@ -181,9 +182,7 @@ class WorldOutlook {
                 this_.switchVpnBtn.innerText = '关闭VPN';
                 this_.ss_link = 'ss://' + window.btoa('aes-256-cfb:'+body.ss_pwd+'@65.49.195.248:'+body.port);
                 this_.qrcodeJS.clear();
-                this_.qrcodeJS.makeCode(this_.ssQrcode, {
-                    text: this_.ss_link,
-                });
+                this_.qrcodeJS.makeCode(this_.ss_link);
                 activate(this_.ssQrcode);
                 deactivate(this_.qrcodeHint);
             } else {
