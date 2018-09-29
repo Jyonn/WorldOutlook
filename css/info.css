@@ -1,0 +1,44 @@
+.strong-shadow,
+.info-center > div {
+  box-shadow: 1px 3px 10px 0 gray;
+}
+.animate,
+.info-center > div {
+  transition: 0.2s;
+}
+.info-center {
+  position: fixed;
+  width: 240px;
+  max-height: calc(100% - 100px);
+  overflow: scroll;
+  right: 0;
+  top: 100px;
+  z-index: 99999;
+}
+.info-center > div {
+  border-radius: 0 0 0 17px;
+  min-height: 34px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: white;
+}
+.info-center > div div.text {
+  word-break: break-all;
+  word-wrap: break-word;
+  width: 100%;
+  padding: 7px 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.info-center > div.error div.text {
+  color: #bd3381;
+}
+.info-center > div.succ div.text {
+  color: #2699FB;
+}
+.info-center > div.warn div.text {
+  color: #ee583f;
+}
+.info-center > div.inactive {
+  margin-left: 240px;
+}

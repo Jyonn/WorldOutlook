@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" lang="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>世界观</title>
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mywebicon.css">
+    <link rel="stylesheet" href="css/info.css">
+
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/service.js"></script>
+    <script type="text/javascript" src="js/worldoutlook.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+    <script type="text/javascript" src="js/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="full fit-body bg"></div>
+    <div class="info-center" id="info-center"></div>
+
+    <div class="center-container" id="login-mask">
+        <div class="login-mask full">
+            <div class="canvas">
+                <div class="logo img-fit"></div>
+                <div class="spinner1 spinnerMax">
+                    <div class="spinner1 spinnerMid">
+                        <div class="spinner1 spinnerMin"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">正在尝试登录…</div>
+        </div>
+        <div class="support">感谢 <span class="myweb-huntianxia"></span>浑天匣 提供技术支持</div>
+    </div>
+
+    <div class="center-container main inactive" id="center-container">
+        <div class="nav">
+            <div class="greeting" id="greeting"></div>
+            <a target="_self" id="user-avatar-link">
+                <div class="user-avatar img-fit" id="user-avatar"></div>
+            </a>
+        </div>
+        <div class="logo-box">
+            <div class="container">
+                <div class="app-logo img-fit" id="app-logo"></div>
+                <div class="app-name">世界观</div>
+                <div class="description">看见真实，用双眼</div>
+            </div>
+        </div>
+        <div class="main-btns inactive" id="main-btns">
+            <div class="btn" id="touch-world-btn">触摸世界</div>
+            <div class="btn" id="donate-btn">我要捐助</div>
+            <div class="btn round" id="why-donate-btn">?</div>
+        </div>
+        <div class="help" id="help">
+            <div class="title">使用帮助</div>
+            <div class="content">
+                <div>如果还没有安装SS客户端，请<b id="download-client">点击此处</b>获取各平台安装包。</div>
+                <div>（iOS平台因为监管，需要安装三块钱的付费应用）</div>
+                <div class="blank"></div>
+                <div>点击“触摸世界”。如果没有登陆，需先注册“齐天簿”，并授权“世界观”应用。</div>
+                <div class="blank"></div>
+                <div>系统将会分配给你随机端口和密码，若密码泄露请立即更新配置。请<b id="view-tutorial">点击此处</b>查看客户端配置教程。</div>
+            </div>
+        </div>
+        <div class="help inactive" id="why-donate">
+            <div class="title">为什么需要捐助？</div>
+            <div class="content">
+                <div>搭建VPN服务器需要服务器成本，大家现在用的 Bandwagon 服务器，<b>每年需缴纳29.99$的费用</b>。一人之力，难以承担。</div>
+                <div class="blank"></div>
+                <div>此外，为了能让大家使用稳定的VPN服务，而不被外界干扰，系统采用了手机号注册并防止机器人爬虫。“齐天簿”系统和“世界观”系统也需要日常的人力维护。</div>
+                <div class="blank"></div>
+                <div>捐助不在乎钱的多少，谢谢大家的鼓励。</div>
+            </div>
+        </div>
+        <div class="support">感谢 <span class="myweb-huntianxia"></span>浑天匣 提供技术支持</div>
+
+        <div class="config-box">
+            <div class="title">配置信息</div>
+            <div class="btn config" id="switch-vpn-btn">关闭VPN</div>
+            <div class="btn config" id="reset-config-btn">更新配置</div>
+            <div class="config-list">
+                <div class="config-item">
+                    <div class="key">服务器</div>
+                    <div class="value">65.49.195.248</div>
+                </div>
+                <div class="config-item">
+                    <div class="key">端口</div>
+                    <div class="value" id="port"></div>
+                </div>
+                <div class="config-item">
+                    <div class="key">密码</div>
+                    <div class="value" id="password"></div>
+                </div>
+                <div class="config-item">
+                    <div class="key">代理模式</div>
+                    <div class="value">自动代理模式</div>
+                </div>
+                <div class="config-item">
+                    <div class="key">加密方式</div>
+                    <div class="value">AES-256-CFB</div>
+                </div>
+            </div>
+        </div>
+        <div class="qrcode-box">
+            <div class="title">或二维码扫描</div>
+            <div class="qrcode" id="ss-qrcode"></div>
+            <div class="hint inactive" id="qrcode-hint">VPN未开启，暂无二维码</div>
+        </div>
+        <div class="touch-world-btns">
+            <!--<div class="btn" id="watch-tutorial">查看教程</div>-->
+            <div class="btn" id="config-back-home">返回首页</div>
+        </div>
+
+        <div class="platform-box inactive" id="platform-box">
+            <div class="img-fit" id="platform-back-home"></div>
+            <a href target="_blank" id="pf-windows">
+                <div class="item left top">
+                    <i class="fab fa-windows"></i>
+                    <div class="btn platform">Windows</div>
+                </div>
+            </a>
+            <a href target="_blank" id="pf-android">
+                <div class="item right top">
+                    <i class="fab fa-android"></i>
+                    <div class="btn platform">Android</div>
+                </div>
+            </a>
+            <a href target="_blank" id="pf-ios">
+                <div class="item left bottom">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn platform">iOS</div>
+                </div>
+            </a>
+            <a href target="_blank" id="pf-macos">
+                <div class="item right bottom">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn platform">macOS</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="donate-box">
+            <div class="payment-box active" id="alipay-box">
+                <i class="fab fa-alipay"></i>
+                <div class="title">支付宝</div>
+            </div>
+            <div class="payment-box" id="weixin-box">
+                <i class="fab fa-weixin"></i>
+                <div class="title">微信</div>
+            </div>
+            <div class="bar under-bar"></div>
+            <div class="bar moving-bar alipay" id="moving-bar"></div>
+            <div class="qrcode img-fit alipay" id="donate-qrcode"></div>
+            <div class="thanks">感谢您的捐助</div>
+        </div>
+        <div class="donate-btns">
+            <div class="btn" id="donate-back-home">返回首页</div>
+        </div>
+    </div>
+</body>
+<script>
+    Info.staticConstructor();
+    InfoCenter.staticConstructor('info-center');
+
+    let worldOutlook = new WorldOutlook({
+        centerContainer: 'center-container',
+        loginMask: 'login-mask',
+
+        greeting: 'greeting',
+        userAvatar: 'user-avatar',
+        userAvatarLink: 'user-avatar-link',
+
+        touchWorldBtn: 'touch-world-btn',
+        donateBtn: 'donate-btn',
+        whyDonateBtn: 'why-donate-btn',
+
+        helpText: 'help',
+        whyDonateText: 'why-donate',
+        downloadClientBtn: 'download-client',
+        viewTutorialBtn: 'view-tutorial',
+
+        switchVpnBtn: 'switch-vpn-btn',
+        resetConfigBtn: 'reset-config-btn',
+        port: 'port',
+        password: 'password',
+        configBackHomeBtn: 'config-back-home',
+        ssQrcode: 'ss-qrcode',
+        qrcodeHint: 'qrcode-hint',
+
+        alipayBox: 'alipay-box',
+        weixinBox: 'weixin-box',
+        donateBackHomeBtn: 'donate-back-home',
+        movingBar: 'moving-bar',
+        donateQrcode: 'donate-qrcode',
+
+        mainBtns: 'main-btns',
+        platformBox: 'platform-box',
+        pfWindows: 'pf-windows',
+        pfAndroid: 'pf-android',
+        pfiOS: 'pf-ios',
+        pfmacOS: 'pf-macos',
+        platformBackHomeBtn: 'platform-back-home',
+    });
+    worldOutlook.setPageStatus(WorldOutlook.S_MAIN);
+</script>
+</html>

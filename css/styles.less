@@ -1,0 +1,532 @@
+@import "base";
+
+* {
+  font-weight: lighter;
+  transition: 0.2s;
+}
+
+@btn-height: 40px;
+@btn-width: 220px;
+div.btn {
+  width: @btn-width;
+  height: @btn-height;
+  line-height: @btn-height;
+  border-radius: 20px;
+  background: white;
+  filter: opacity(0.9);
+  text-align: center;
+  vertical-align: middle;
+  color: #BD3381;
+  font-weight: bold;
+  font-size: 18px;
+  .strong-shadow();
+  .ptr();
+
+  &:hover {
+    filter: opacity(1);
+  }
+}
+
+div.btn.round {
+  width: @btn-height;
+}
+
+@btn-config-width: 100px;
+@btn-config-height: 28px;
+div.btn.config {
+  width: @btn-config-width;
+  height: @btn-config-height;
+  line-height: @btn-config-height;
+  font-size: 16px;
+}
+
+@btn-platform-width: 80px;
+@btn-platform-height: 30px;
+div.btn.platform {
+  width: @btn-platform-width;
+  height: @btn-platform-height;
+  line-height: @btn-platform-height;
+  font-weight: normal;
+  font-size: 14px;
+  filter: opacity(1);
+}
+
+div.center-container {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+div.center-container.inactive {
+  display: none;
+}
+
+div.login-mask {
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  div.logo {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-image: url("../image/world.png");
+  }
+  div.title {
+    margin-top: 20px;
+  }
+}
+
+div.nav {
+  position: absolute;
+  top: 18px;
+  right: 19px;
+  @avatar-size: 16px;
+  div.greeting {
+    position: absolute;
+    right: @avatar-size;
+    top: 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 10px;
+    width: max-content;
+  }
+  div.user-avatar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: @avatar-size;
+    height: @avatar-size;
+    border-radius: @avatar-size / 2;
+    .ptr();
+  }
+}
+
+div.logo-box {
+  position: absolute;
+  top: 140px;
+  @logo-size: 70px;
+  width: 100%;
+  z-index: 1;
+  div.container {
+    position: absolute;
+    text-align: center;
+    left: calc(~'50% - 102px');
+    div.app-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("../image/world.png");
+      width: @logo-size;
+      height: @logo-size;
+    }
+    div.app-name {
+      position: absolute;
+      top: 0;
+      left: 80px;
+      font-size: 40px;
+      letter-spacing: 3px;
+      color: white;
+      width: max-content;
+      font-weight: normal;
+    }
+    div.description {
+      position: absolute;
+      top: 50px;
+      left: 85px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: white;
+      width: max-content;
+    }
+  }
+}
+
+.logo-box-small {
+  top: 18px;
+  left: 17px;
+  div.container {
+    left: 0;
+    @logo-size-small: 50px;
+    div.app-logo {
+      width: @logo-size-small;
+      height: @logo-size-small;
+    }
+    div.app-name {
+      font-size: 23px;
+      left: 55px;
+      letter-spacing: 15px;
+    }
+    div.description {
+      font-size: 12px;
+      left: 58px;
+      top: 30px;
+      letter-spacing: 0;
+    }
+  }
+}
+
+@help-width: 360px;
+div.help {
+  position: absolute;
+  width: @help-width;
+  left: calc(~'50% - @{help-width} / 2');
+  bottom: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+  text-align: justify;
+  div.title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  div.content {
+    font-size: 12px;
+    div.blank {
+      height: 16px;
+    }
+    b {
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.8);
+      .ptr();
+    }
+  }
+}
+div.help.inactive {
+  left: -100%;
+}
+
+div.support {
+  position: absolute;
+  bottom: 6px;
+  //right: 19px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+div.main-btns {
+  position: absolute;
+  width: @btn-width;
+  bottom: 260px;
+  #touch-world-btn {
+    position: absolute;
+    bottom: 60px;
+  }
+  #donate-btn {
+    position: absolute;
+    bottom: 0;
+  }
+  #why-donate-btn {
+    position: absolute;
+    bottom: 0;
+    right: -55px;
+  }
+}
+div.main-btns.inactive {
+  left: 100%;
+}
+div.main-btns.active {
+  left: calc(~'50% - @{btn-width} / 2');
+}
+
+div.touch-world-btns {
+  position: absolute;
+  width: @btn-width;
+  left: calc(~'50% - @{btn-width} / 2');
+  bottom: 70px;
+  //#watch-tutorial {
+  //  position: absolute;
+  //  bottom: 60px;
+  //}
+  #config-back-home {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+div.config-box {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  left: 0;
+  div.title {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    left: 17px;
+  }
+  #switch-vpn-btn {
+    position: absolute;
+    top: 0;
+    right: 127px;
+  }
+  #reset-config-btn {
+    position: absolute;
+    top: 0;
+    right: 17px;
+  }
+  div.config-list {
+    position: absolute;
+    top: 38px;
+    width: 100%;
+    @config-item-height: 40px;
+    div.config-item {
+      position: relative;
+      height: @config-item-height;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      font-size: 13px;
+      div.key, div.value {
+        position: absolute;
+        line-height: @config-item-height;
+      }
+      div.key {
+        color: rgba(255, 255, 255, 0.6);
+        left: 20px;
+      }
+      div.value {
+        color: white;
+        left: 100px;
+      }
+      &:nth-child(1) {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+div.qrcode-box {
+  position: absolute;
+  left: 0;
+  top: 370px;
+  width: 100%;
+  div.title {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    left: 17px;
+  }
+  div.qrcode {
+    position: absolute;
+    top: 40px;
+    left: calc(~'50% - 64px');
+  }
+  div.qrcode.inactive {
+    display: none;
+  }
+  div.hint {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  div.hint.inactive {
+    display: none;
+  }
+}
+
+div.platform-box {
+  position: absolute;
+  bottom: 260px;
+  width: 100%;
+  #platform-back-home {
+    background-image: url("../image/back.png");
+    width: 30px;
+    height: 30px;
+    left: 30px;
+    position: absolute;
+    bottom: 70px;
+  }
+  div.item {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    filter: opacity(0.6);
+    div.btn {
+      position: absolute;
+      bottom: 0;
+    }
+    i {
+      color: white;
+      font-size: 40px;
+    }
+    &:hover {
+      filter: opacity(1);
+    }
+    .ptr();
+  }
+  div.item.active {
+    filter: opacity(1);
+  }
+  div.bottom {
+    bottom: 0;
+  }
+  div.top {
+    bottom: 110px;
+  }
+  div.right {
+    left: calc(~'50% + 35px');
+  }
+  div.left {
+    right: calc(~'50% + 35px');
+  }
+}
+div.platform-box.inactive {
+  left: -100%;
+}
+div.platform-box.active {
+  left: 0;
+}
+
+div.donate-box {
+  position: absolute;
+  top: 160px;
+  width: 100%;
+  @box-width: 60px;
+  div.payment-box {
+    position: absolute;
+    width: @box-width;
+    height: 80px;
+    top: 0;
+    text-align: center;
+    i {
+      font-size: 40px;
+    }
+    div.title {
+      position: absolute;
+      bottom: 0;
+      color: white;
+      font-size: 18px;
+      width: 60px;
+      text-align: center;
+    }
+    filter: opacity(0.6);
+    :hover {
+      filter: opacity(0.8);
+    }
+    .ptr();
+    div.qrcode {
+      position: absolute;
+      top: 30px;
+    }
+    div.alipay {
+      background-image: url("../image/alipay.jpg");
+    }
+    div.weixin {
+      background-image: url("../image/weixin.jpg");
+    }
+  }
+  div.payment-box.active {
+    filter: opacity(1);
+    div.title {
+      font-weight: bold;
+    }
+  }
+  @box-margin: 25px;
+  #alipay-box {
+    right: calc(~'50% + @{box-margin}');
+    i {
+      color: #1AA1E6;
+    }
+  }
+  #weixin-box {
+    left: calc(~'50% + @{box-margin}');
+    i {
+      color: #56C13D;
+    }
+  }
+  div.bar {
+    position: absolute;
+    top: 90px;
+    height: 5px;
+    background: white;
+  }
+  div.bar.under-bar {
+    filter: opacity(0.6);
+    width: 4 * @box-margin + 2 * @box-width;
+    left: calc(~'50% - 2 * @{box-margin} - @{box-width}');
+  }
+  div.bar.moving-bar {
+    width: @box-width + 2 * @box-margin;
+  }
+  div.bar.moving-bar.alipay {
+    left: calc(~'50% - 2 * @{box-margin} - @{box-width}');
+  }
+  div.bar.moving-bar.weixin {
+    left: calc(~'50%');
+  }
+  @qr-size: 200px;
+  div.qrcode {
+    position: absolute;
+    top: 120px;
+    width: @qr-size;
+    height: @qr-size;
+    left: calc(~'50% - @{qr-size} / 2');
+  }
+  div.qrcode.alipay {
+    background-image: url("../image/alipay.jpg");
+  }
+  div.qrcode.weixin {
+    background-image: url("../image/weixin.jpg");
+  }
+  div.thanks {
+    position: absolute;
+    top: 340px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+  }
+}
+
+div.donate-btns {
+  position: absolute;
+  width: @btn-width;
+  left: calc(~'50% - @{btn-width} / 2');
+  bottom: 70px;
+  #donate-back-home {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+div.center-container.main {
+  div.config-box, div.qrcode-box, div.touch-world-btns, div.donate-box, div.donate-btns {
+    display: none;
+  }
+}
+
+div.center-container.why-donate {
+  div.config-box, div.qrcode-box, div.touch-world-btns, div.platform-box, div.donate-box, div.donate-btns {
+    display: none;
+  }
+}
+
+div.center-container.config {
+  div.help, div.main-btns, div.platform-box, div.donate-box, div.donate-btns {
+    display: none;
+  }
+  div.logo-box {
+    .logo-box-small();
+  }
+}
+
+div.center-container.platform {
+  div.config-box, div.qrcode-box, div.touch-world-btns, div.donate-box, div.donate-btns {
+    display: none;
+  }
+}
+
+div.center-container.donate {
+  div.config-box, div.qrcode-box, div.touch-world-btns, div.help, div.main-btns, div.platform-box {
+    display: none;
+  }
+  div.logo-box {
+    .logo-box-small();
+  }
+}

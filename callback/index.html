@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8" lang="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>世界观</title>
+    <link rel="stylesheet" href="../css/info.css">
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../js/service.js"></script>
+    <script type="text/javascript" src="../js/info.js"></script>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+</style>
+<body>
+    <div class="info-center" id="info-center"></div>
+</body>
+<script>
+    Info.staticConstructor();
+    InfoCenter.staticConstructor('info-center');
+
+    let code = getQueryParam('code');
+    Service.qtbCallbackAPI({code: code})
+        .then((body) => {
+            Request.saveToken(body.token);
+            InfoCenter.delayInfo(
+                new Info('授权成功，正在跳转…', Info.TYPE_SUCC),
+                () => {
+                    window.location.href = '/';
+                }
+            )();
+        });
+</script>
+</html>
