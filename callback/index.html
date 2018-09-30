@@ -3,19 +3,35 @@
     <meta charset="UTF-8" lang="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>世界观</title>
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/info.css">
+    <link rel="stylesheet" href="../css/mywebicon.css">
+
     <script type="text/javascript" src="../js/base.js"></script>
     <script type="text/javascript" src="../js/service.js"></script>
     <script type="text/javascript" src="../js/info.js"></script>
 </head>
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-    }
 </style>
 <body>
+    <div class="full fit-body bg"></div>
     <div class="info-center" id="info-center"></div>
+
+    <div class="center-container">
+        <div class="login-mask full">
+            <div class="canvas">
+                <div class="logo img-fit"></div>
+                <div class="spinner1 spinnerMax">
+                    <div class="spinner1 spinnerMid">
+                        <div class="spinner1 spinnerMin"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">正在处理授权…</div>
+        </div>
+        <div class="support">感谢 <span class="myweb-huntianxia"></span>浑天匣 提供技术支持</div>
+    </div>
 </body>
 <script>
     Info.staticConstructor();
@@ -31,6 +47,14 @@
                     window.location.href = '/';
                 }
             )();
-        });
+        })
+        .catch(
+            InfoCenter.delayInfo(
+                new Info('正在跳转到授权界面…', Info.TYPE_ERROR),
+                () => {
+                    window.location.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
+                }
+            )
+        );
 </script>
 </html>

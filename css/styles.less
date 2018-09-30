@@ -224,7 +224,7 @@ div.main-btns {
   }
 }
 div.main-btns.inactive {
-  left: 100%;
+  left: -100%;
 }
 div.main-btns.active {
   left: calc(~'50% - @{btn-width} / 2');
@@ -331,15 +331,21 @@ div.qrcode-box {
 
 div.platform-box {
   position: absolute;
-  bottom: 260px;
+  //bottom: 260px;
+  top: 120px;
   width: 100%;
   #platform-back-home {
-    background-image: url("../image/back.png");
-    width: 30px;
-    height: 30px;
-    left: 30px;
     position: absolute;
-    bottom: 70px;
+    top: 300px;
+    left: calc(~'50% - @{btn-width} / 2');
+  }
+  div.title {
+    width: 100%;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
   }
   div.item {
     position: absolute;
@@ -364,10 +370,10 @@ div.platform-box {
     filter: opacity(1);
   }
   div.bottom {
-    bottom: 0;
+    top: 180px;
   }
   div.top {
-    bottom: 110px;
+    top: 70px;
   }
   div.right {
     left: calc(~'50% + 35px');
@@ -377,7 +383,7 @@ div.platform-box {
   }
 }
 div.platform-box.inactive {
-  left: -100%;
+  left: 100%;
 }
 div.platform-box.active {
   left: 0;
@@ -519,6 +525,9 @@ div.center-container.config {
 div.center-container.platform {
   div.config-box, div.qrcode-box, div.touch-world-btns, div.donate-box, div.donate-btns {
     display: none;
+  }
+  div.logo-box {
+    .logo-box-small();
   }
 }
 

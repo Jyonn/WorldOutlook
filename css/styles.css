@@ -300,7 +300,7 @@ div.main-btns #why-donate-btn {
   right: -55px;
 }
 div.main-btns.inactive {
-  left: 100%;
+  left: -100%;
 }
 div.main-btns.active {
   left: calc(50% - 220px / 2);
@@ -399,16 +399,21 @@ div.qrcode-box div.hint.inactive {
 }
 div.platform-box {
   position: absolute;
-  bottom: 260px;
+  top: 120px;
   width: 100%;
 }
 div.platform-box #platform-back-home {
-  background-image: url("../image/back.png");
-  width: 30px;
-  height: 30px;
-  left: 30px;
   position: absolute;
-  bottom: 70px;
+  top: 300px;
+  left: calc(50% - 220px / 2);
+}
+div.platform-box div.title {
+  width: 100%;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 20px;
 }
 div.platform-box div.item {
   position: absolute;
@@ -433,10 +438,10 @@ div.platform-box div.item.active {
   filter: opacity(1);
 }
 div.platform-box div.bottom {
-  bottom: 0;
+  top: 180px;
 }
 div.platform-box div.top {
-  bottom: 110px;
+  top: 70px;
 }
 div.platform-box div.right {
   left: calc(50% + 35px);
@@ -445,7 +450,7 @@ div.platform-box div.left {
   right: calc(50% + 35px);
 }
 div.platform-box.inactive {
-  left: -100%;
+  left: 100%;
 }
 div.platform-box.active {
   left: 0;
@@ -607,6 +612,28 @@ div.center-container.platform div.touch-world-btns,
 div.center-container.platform div.donate-box,
 div.center-container.platform div.donate-btns {
   display: none;
+}
+div.center-container.platform div.logo-box {
+  top: 18px;
+  left: 17px;
+}
+div.center-container.platform div.logo-box div.container {
+  left: 0;
+}
+div.center-container.platform div.logo-box div.container div.app-logo {
+  width: 50px;
+  height: 50px;
+}
+div.center-container.platform div.logo-box div.container div.app-name {
+  font-size: 23px;
+  left: 55px;
+  letter-spacing: 15px;
+}
+div.center-container.platform div.logo-box div.container div.description {
+  font-size: 12px;
+  left: 58px;
+  top: 30px;
+  letter-spacing: 0;
 }
 div.center-container.donate div.config-box,
 div.center-container.donate div.qrcode-box,

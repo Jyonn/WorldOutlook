@@ -65,6 +65,7 @@ class WorldOutlook {
 
         // platform
         mainBtns,
+        platformTitle,
         platformBox,
         pfWindows,
         pfAndroid,
@@ -106,6 +107,7 @@ class WorldOutlook {
         this.donateQrcode = WorldOutlook.getEle(donateQrcode);
 
         this.mainBtns = WorldOutlook.getEle(mainBtns);
+        this.platformTitle = WorldOutlook.getEle(platformTitle);
         this.platformBox = WorldOutlook.getEle(platformBox);
         this.pfWindows = WorldOutlook.getEle(pfWindows);
         this.pfAndroid = WorldOutlook.getEle(pfAndroid);
@@ -126,6 +128,7 @@ class WorldOutlook {
             ios: {
                 element: this.pfiOS,
                 client: 'https://s.6-79.cn/LwPo51',
+                tutorial: 'https://s.6-79.cn/VuwL9D',
             },
             macos: {
                 element: this.pfmacOS,
@@ -147,10 +150,12 @@ class WorldOutlook {
         this.donateBackHomeBtn.addEventListener('click', () => {this_.setPageStatus(WorldOutlook.S_MAIN)});
         this.downloadClientBtn.addEventListener('click', () => {
             this_.platformUsage = WorldOutlook.PF_CLIENT;
+            this_.platformTitle.innerText = '选择平台以获取客户端';
             this_.setPageStatus(WorldOutlook.S_PLATFORM)
         });
         this.viewTutorialBtn.addEventListener('click', () => {
             this_.platformUsage = WorldOutlook.PF_TUTORIAL;
+            this_.platformTitle.innerText = '选择平台以获取教程';
             this_.setPageStatus(WorldOutlook.S_PLATFORM);
         });
 
@@ -224,12 +229,14 @@ class WorldOutlook {
         });
 
         // try login
+        // fadeOut(this_.loginMask);
+        // fadeIn(this_.centerContainer);
         Service.getMyInfoAPI()
             .then(dealUserDictSucc)
             .catch(() => {
                 this_.greeting.innerText = '你好，请登录';
                 this_.userAvatar.style.backgroundImage = 'url("../image/unlogin.png")';
-                this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94&state=/';
+                this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
             })
             .finally(() => {
                 fadeOut(this_.loginMask);
