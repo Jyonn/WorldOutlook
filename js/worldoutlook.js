@@ -248,6 +248,7 @@ class WorldOutlook {
                 this_.isLogin = false;
             })
             .finally(() => {
+                alert('修复测试…');
                 deactivate(this_.loginMask);
                 activate(this_.centerContainer);
             });
