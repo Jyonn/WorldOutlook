@@ -137,7 +137,13 @@ class WorldOutlook {
             },
         };
 
-        this.touchWorldBtn.addEventListener('click', () => {this_.setPageStatus(WorldOutlook.S_CONFIG)});
+        this.touchWorldBtn.addEventListener('click', () => {
+            if (this_.isLogin)
+                this_.setPageStatus(WorldOutlook.S_CONFIG);
+            else {
+                InfoCenter.push(new Info('未登录用户无法获取SS帐号'));
+            }
+        });
         this.donateBtn.addEventListener('click', () => {this_.setPageStatus(WorldOutlook.S_DONATE)});
         this.whyDonateBtn.addEventListener('click', () => {
             if (this_.pageStatus === WorldOutlook.S_MAIN) {
@@ -177,6 +183,7 @@ class WorldOutlook {
         });
 
         let dealUserDictSucc = function(body) {
+            this_.isLogin = true;
             this_.greeting.innerText = `你好，${body.nickname}`;
             this_.userAvatar.style.backgroundImage = `url("${body.avatar}")`;
             this_.userAvatarLink.href = 'https://sso.6-79.cn/user/info-modify?from=https%3A%2F%2Fworld.6-79.cn%2F';
@@ -237,6 +244,7 @@ class WorldOutlook {
                 this_.greeting.innerText = '你好，请登录';
                 this_.userAvatar.style.backgroundImage = 'url("../image/unlogin.png")';
                 this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
+                this_.isLogin = false;
             })
             .finally(() => {
                 fadeOut(this_.loginMask);
