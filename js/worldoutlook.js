@@ -248,7 +248,6 @@ class WorldOutlook {
                 this_.isLogin = false;
             })
             .finally(() => {
-                alert(">>>>");
                 fadeOut(this_.loginMask);
                 fadeIn(this_.centerContainer);
             });
