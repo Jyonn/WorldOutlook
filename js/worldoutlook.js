@@ -241,7 +241,7 @@ class WorldOutlook {
         Service.getMyInfoAPI()
             .then(dealUserDictSucc)
             .catch(() => {
-                this_.greeting.innerText = '你好，请登录';
+                this_.greeting.innerText = '你好，请点击头像登录或注册';
                 this_.userAvatar.style.backgroundImage = 'url("../image/unlogin.png")';
                 this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
                 this_.isLogin = false;
