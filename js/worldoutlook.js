@@ -185,7 +185,7 @@ class WorldOutlook {
         let dealUserDictSucc = function(body) {
             this_.isLogin = true;
             this_.greeting.innerText = `你好，${body.nickname}`;
-            this_.userAvatar.style.backgroundImage = `url("${body.avatar}")`;
+            this_.userAvatar.style.backgroundImage = `url("${body.avatar || 'https://unsplash.6-79.cn/random/small?quick=1'}")`;
             this_.userAvatarLink.href = 'https://sso.6-79.cn/user/info-modify?from=https%3A%2F%2Fworld.6-79.cn%2F';
             this_.ss_on = body.ss_on;
             if (this_.ss_on) {
