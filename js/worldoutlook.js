@@ -124,6 +124,7 @@ class WorldOutlook {
             android: {
                 element: this.pfAndroid,
                 client: 'https://s.6-79.cn/J1OvfD',
+                tutorial: 'https://s.6-79.cn/63ucEk',
             },
             ios: {
                 element: this.pfiOS,
