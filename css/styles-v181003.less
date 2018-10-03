@@ -56,7 +56,7 @@ div.center-container {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 div.center-container.inactive {
-  display: none;
+  margin-left: 100%;
 }
 
 div.login-mask {
@@ -76,6 +76,9 @@ div.login-mask {
     margin-top: 20px;
   }
 }
+div.login-mask.inactive {
+  margin-right: 100%;
+}
 
 div.nav {
   position: absolute;
@@ -90,6 +93,7 @@ div.nav {
     color: rgba(255, 255, 255, 0.6);
     margin-right: 10px;
     width: max-content;
+    width: -moz-max-content;
   }
   div.user-avatar {
     position: absolute;
@@ -128,6 +132,7 @@ div.logo-box {
       letter-spacing: 3px;
       color: white;
       width: max-content;
+      width: -moz-max-content;
       font-weight: normal;
     }
     div.description {
@@ -138,6 +143,7 @@ div.logo-box {
       letter-spacing: 1px;
       color: white;
       width: max-content;
+      width: -moz-max-content;
     }
   }
 }

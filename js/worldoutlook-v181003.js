@@ -205,6 +205,8 @@ class WorldOutlook {
                 deactivate(this_.ssQrcode);
                 activate(this_.qrcodeHint);
             }
+            deactivate(this_.loginMask);
+            activate(this_.centerContainer);
         };
 
         this.makeRequest = false;
@@ -246,10 +248,8 @@ class WorldOutlook {
                 this_.userAvatar.style.backgroundImage = 'url("../image/unlogin.png")';
                 this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
                 this_.isLogin = false;
-            })
-            .finally(() => {
-                fadeOut(this_.loginMask);
-                fadeIn(this_.centerContainer);
+                deactivate(this_.loginMask);
+                activate(this_.centerContainer);
             });
     }
 

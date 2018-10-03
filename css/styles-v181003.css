@@ -143,7 +143,7 @@ div.center-container {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 div.center-container.inactive {
-  display: none;
+  margin-left: 100%;
 }
 div.login-mask {
   z-index: 10;
@@ -162,6 +162,9 @@ div.login-mask div.logo {
 div.login-mask div.title {
   margin-top: 20px;
 }
+div.login-mask.inactive {
+  margin-right: 100%;
+}
 div.nav {
   position: absolute;
   top: 18px;
@@ -175,6 +178,7 @@ div.nav div.greeting {
   color: rgba(255, 255, 255, 0.6);
   margin-right: 10px;
   width: max-content;
+  width: -moz-max-content;
 }
 div.nav div.user-avatar {
   position: absolute;
@@ -212,6 +216,7 @@ div.logo-box div.container div.app-name {
   letter-spacing: 3px;
   color: white;
   width: max-content;
+  width: -moz-max-content;
   font-weight: normal;
 }
 div.logo-box div.container div.description {
@@ -222,6 +227,7 @@ div.logo-box div.container div.description {
   letter-spacing: 1px;
   color: white;
   width: max-content;
+  width: -moz-max-content;
 }
 .logo-box-small {
   top: 18px;
