@@ -119,7 +119,7 @@ class WorldOutlook {
             windows: {
                 element: this.pfWindows,
                 client: 'https://s.6-79.cn/UqdRWo',
-                // tutorial:
+                tutorial: 'https://s.6-79.cn/ZV7jep',
             },
             android: {
                 element: this.pfAndroid,
