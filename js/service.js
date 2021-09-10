@@ -1,6 +1,6 @@
 class Service {
     static qtbCallbackAPI({code}) {
-        return Request.get('/api/oauth/callback', arguments[0]);
+        return Request.get('/api/oauth/qtb/callback', arguments[0]);
     }
 
     static getErrorAPI() {
