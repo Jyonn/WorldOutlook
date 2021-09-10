@@ -197,7 +197,7 @@ class WorldOutlook {
                 this_.port.innerText = body.port;
                 this_.password.innerText = body.ss_pwd;
                 this_.switchVpnBtn.innerText = '关闭VPN';
-                this_.ss_link = 'ss://' + window.btoa('aes-256-cfb:'+body.ss_pwd+'@65.49.195.248:'+body.port);
+                this_.ss_link = 'ss://' + window.btoa('aes-256-cfb:'+body.ss_pwd+'@139.198.168.65:'+body.port);
                 this_.qrcodeJS.clear();
                 this_.qrcodeJS.makeCode(this_.ss_link);
                 activate(this_.ssQrcode);
