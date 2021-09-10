@@ -1,17 +1,13 @@
 class Service {
     static qtbCallbackAPI({code}) {
-        return Request.get('/api/oauth/qtb/callback', arguments[0]);
-    }
-
-    static getErrorAPI() {
-        return Request.get('/api/base/errors');
+        return Request.get('/oauth/qtb/callback', arguments[0]);
     }
 
     static getMyInfoAPI() {
-        return Request.get('/api/user/');
+        return Request.get('/user/');
     }
 
     static changeVpnStatus({action}) {
-        return Request.put('/api/user/ss', arguments[0]);
+        return Request.put('/user/ss', arguments[0]);
     }
 }
