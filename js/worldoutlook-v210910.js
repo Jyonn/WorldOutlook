@@ -145,7 +145,11 @@ class WorldOutlook {
                 InfoCenter.push(new Info('未登录用户无法获取SS帐号'));
             }
         });
-        this.donateBtn.addEventListener('click', () => {this_.setPageStatus(WorldOutlook.S_DONATE)});
+        // this.donateBtn.addEventListener('click', () => {this_.setPageStatus(WorldOutlook.S_DONATE)});
+        this.donateBtn.addEventListener('click', () => {
+            InfoCenter.push(new Info('暂不需要捐助，已关闭捐助通道'));
+        })
+
         this.whyDonateBtn.addEventListener('click', () => {
             if (this_.pageStatus === WorldOutlook.S_MAIN) {
                 this_.setPageStatus(WorldOutlook.S_WHYDONATE);
@@ -246,7 +250,7 @@ class WorldOutlook {
             .catch(() => {
                 this_.greeting.innerText = '你好，请点击头像登录或注册';
                 this_.userAvatar.style.backgroundImage = 'url("../image/unlogin.png")';
-                this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvojaEiaX1JZAxJrcb1xxElvuo94';
+                this_.userAvatarLink.href = 'https://sso.6-79.cn/oauth/?app_id=dyELDvoj';
                 this_.isLogin = false;
                 deactivate(this_.loginMask);
                 activate(this_.centerContainer);
