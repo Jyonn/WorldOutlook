@@ -44,7 +44,7 @@ class ErrorHandler {
 class Request {
     static staticConstructor() {
         this.token = window.localStorage.getItem('token');
-        this.worldAPIHost = 'https://worldapi.6-79.cn';
+        this.worldAPIHost = 'https://api.world.6-79.cn';
     }
     static saveToken(token) {
         this.token = token;
